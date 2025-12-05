@@ -1,0 +1,47 @@
+{
+  "status": "success",
+  "result": [
+    {
+      "id": 7453,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Shane and family are wonderful! Would definitely host again :)",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 }
+      ],
+      "submittedAt": "2020-08-21 22:45:14",
+      "guestName": "Shane Finkelstein",
+      "listingName": "2B N1 A - 29 Shoreditch Heights"
+    },
+    {
+      "id": 7454,
+      "type": "guest",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great place, small issue with heating.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2021-06-10 10:12:00",
+      "guestName": "A. Smith",
+      "listingName": "2B N1 A - 29 Shoreditch Heights"
+    },
+    {
+      "id": 9001,
+      "type": "guest",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Light was broken, communication slow.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 5 }
+      ],
+      "submittedAt": "2022-03-15 14:00:00",
+      "guestName": "L. Wong",
+      "listingName": "Studio 4B - Camden"
+    }
+  ]
+}
