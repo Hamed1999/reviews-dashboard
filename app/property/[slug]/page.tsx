@@ -171,6 +171,15 @@ export default function PropertyPage() {
               </div>
 
               <div className="flex gap-3">
+                <Link
+                  href={`/public/listing/${encodeURIComponent(slug)}`}
+                  target="_blank"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white rounded-xl font-medium transition-all duration-200"
+                >
+                  <FiEye className="w-4 h-4" />
+                  View Public Page
+                </Link>
+
                 <button
                   onClick={() => {
                     const confirmReset = window.confirm(
