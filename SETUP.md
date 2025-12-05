@@ -17,7 +17,7 @@ git --version
 **Step 2: Clone and Initialize**
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/flexliving-reviews-dashboard.git
+git clone https://github.com/haamed199/reviews-dashboard.git
 cd flexliving-reviews-dashboard
 
 # Install dependencies
