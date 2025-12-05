@@ -3,7 +3,7 @@
 ## Tech Stack
 
 ### Core Technologies
-- **Next.js 14** (App Router) - React framework with built-in routing, API routes, and optimization
+- **Next.js 16** (App Router) - React framework with built-in routing, API routes, and optimization
 - **TypeScript 5.x** - Type-safe JavaScript for better developer experience
 - **Tailwind CSS 3.3** - Utility-first CSS framework for rapid UI development
 - **React Icons 4.11** - Comprehensive icon library using Feather icons set
