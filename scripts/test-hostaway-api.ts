@@ -1,12 +1,18 @@
 #!/usr/bin/env node
 
-const https = require('https');
+import https from 'https';
 
 const HOSTAWAY_API_URL = 'https://api.hostaway.com';
 const ACCOUNT_ID = '61148';
 const API_KEY = 'f94377ebbbb479490bb3ec364649168dc443dda2e4830facaf5de2e74ccc9152';
 
-function makeRequest(path, method = 'GET') {
+interface ApiResponse {
+  status: number;
+  headers: any;
+  data: any;
+}
+
+function makeRequest(path: string, method: string = 'GET'): Promise<ApiResponse> {
   return new Promise((resolve, reject) => {
     const options = {
       hostname: 'api.hostaway.com',
@@ -34,12 +40,12 @@ function makeRequest(path, method = 'GET') {
         try {
           const parsed = JSON.parse(data);
           resolve({
-            status: res.statusCode,
+            status: res.statusCode || 200,
             headers: res.headers,
             data: parsed
           });
         } catch (e) {
-          reject(new Error(`Failed to parse JSON response: ${e.message}`));
+          reject(new Error(`Failed to parse JSON response: ${e instanceof Error ? e.message : 'Unknown error'}`));
         }
       });
     });
@@ -99,7 +105,7 @@ async function testHostawayAPI() {
     
   } catch (error) {
     console.error('\n❌ API Test Failed:');
-    console.error(`   Error: ${error.message}`);
+    console.error(`   Error: ${error instanceof Error ? error.message : 'Unknown error'}`);
     console.error('\n⚠️  Possible issues:');
     console.error('   1. API credentials are incorrect');
     console.error('   2. Account ID is invalid');
