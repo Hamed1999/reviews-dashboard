@@ -237,5 +237,5 @@ export class HostawayService {
   }
 }
 
-// Export singleton instance
+
 export const hostawayService = new HostawayService();
