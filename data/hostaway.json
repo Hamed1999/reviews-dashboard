@@ -9,11 +9,13 @@
       "publicReview": "Shane and family are wonderful! Would definitely host again :)",
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 }
+        { "category": "communication", "rating": 10 },
+        { "category": "check_in", "rating": 9 }
       ],
       "submittedAt": "2020-08-21 22:45:14",
       "guestName": "Shane Finkelstein",
-      "listingName": "2B N1 A - 29 Shoreditch Heights"
+      "listingName": "2B N1 A - 29 Shoreditch Heights",
+      "channel": "airbnb"
     },
     {
       "id": 7454,
@@ -23,11 +25,80 @@
       "publicReview": "Great place, small issue with heating.",
       "reviewCategory": [
         { "category": "cleanliness", "rating": 8 },
-        { "category": "value", "rating": 7 }
+        { "category": "value", "rating": 7 },
+        { "category": "location", "rating": 9 }
       ],
       "submittedAt": "2021-06-10 10:12:00",
       "guestName": "A. Smith",
-      "listingName": "2B N1 A - 29 Shoreditch Heights"
+      "listingName": "2B N1 A - 29 Shoreditch Heights",
+      "channel": "booking.com"
+    },
+    {
+      "id": 7455,
+      "type": "guest",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Perfect location for exploring Shoreditch. The apartment was spotless and the host was very responsive.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 9 },
+        { "category": "location", "rating": 10 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2021-09-05 16:30:00",
+      "guestName": "Maria Rodriguez",
+      "listingName": "2B N1 A - 29 Shoreditch Heights",
+      "channel": "airbnb"
+    },
+    {
+      "id": 7456,
+      "type": "guest",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good value for money but the wifi was quite slow.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 7 },
+        { "category": "value", "rating": 8 },
+        { "category": "amenities", "rating": 5 }
+      ],
+      "submittedAt": "2022-01-15 11:20:00",
+      "guestName": "James Wilson",
+      "listingName": "2B N1 A - 29 Shoreditch Heights",
+      "channel": "direct"
+    },
+    {
+      "id": 7457,
+      "type": "guest",
+      "status": "published",
+      "rating": 10,
+      "publicReview": "Absolutely fantastic stay! Couldn't have asked for more. Will definitely return.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "location", "rating": 10 },
+        { "category": "value", "rating": 10 }
+      ],
+      "submittedAt": "2022-07-22 14:05:00",
+      "guestName": "Sophie Chen",
+      "listingName": "2B N1 A - 29 Shoreditch Heights",
+      "channel": "airbnb"
+    },
+    {
+      "id": 7458,
+      "type": "guest",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "The apartment had a musty smell. Host was nice but didn't resolve the issue.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 4 },
+        { "category": "communication", "rating": 7 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2022-11-30 09:45:00",
+      "guestName": "Thomas O'Connor",
+      "listingName": "2B N1 A - 29 Shoreditch Heights",
+      "channel": "booking.com"
     },
     {
       "id": 9001,
@@ -37,11 +108,299 @@
       "publicReview": "Light was broken, communication slow.",
       "reviewCategory": [
         { "category": "cleanliness", "rating": 6 },
-        { "category": "communication", "rating": 5 }
+        { "category": "communication", "rating": 5 },
+        { "category": "maintenance", "rating": 4 }
       ],
       "submittedAt": "2022-03-15 14:00:00",
       "guestName": "L. Wong",
-      "listingName": "Studio 4B - Camden"
+      "listingName": "Studio 4B - Camden",
+      "channel": "airbnb"
+    },
+    {
+      "id": 9002,
+      "type": "guest",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great studio in a vibrant area. Perfect for a solo traveler.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "location", "rating": 10 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2022-05-20 18:30:00",
+      "guestName": "Alex Turner",
+      "listingName": "Studio 4B - Camden",
+      "channel": "booking.com"
+    },
+    {
+      "id": 9003,
+      "type": "guest",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Amazing location right by Camden Market. Studio was clean and had everything I needed.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "location", "rating": 10 },
+        { "category": "check_in", "rating": 8 },
+        { "category": "amenities", "rating": 9 }
+      ],
+      "submittedAt": "2022-08-12 12:15:00",
+      "guestName": "Fatima Al-Mansoor",
+      "listingName": "Studio 4B - Camden",
+      "channel": "airbnb"
+    },
+    {
+      "id": 9004,
+      "type": "guest",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Too noisy at night, couldn't sleep properly. The studio itself was okay.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "location", "rating": 3 },
+        { "category": "noise_level", "rating": 2 }
+      ],
+      "submittedAt": "2023-01-10 20:45:00",
+      "guestName": "Robert Johnson",
+      "listingName": "Studio 4B - Camden",
+      "channel": "direct"
+    },
+    {
+      "id": 11001,
+      "type": "guest",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Spacious apartment in a great location. Loved the balcony view!",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "amenities", "rating": 8 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2021-11-05 16:20:00",
+      "guestName": "Emma Watson",
+      "listingName": "3C N2 B - 45 Hackney Road",
+      "channel": "airbnb"
+    },
+    {
+      "id": 11002,
+      "type": "guest",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good apartment but some amenities were missing. Host was responsive though.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 9 },
+        { "category": "amenities", "rating": 5 },
+        { "category": "accuracy", "rating": 6 }
+      ],
+      "submittedAt": "2022-02-14 11:10:00",
+      "guestName": "David Miller",
+      "listingName": "3C N2 B - 45 Hackney Road",
+      "channel": "booking.com"
+    },
+    {
+      "id": 11003,
+      "type": "guest",
+      "status": "published",
+      "rating": 10,
+      "publicReview": "Couldn't have asked for a better stay! Everything was perfect.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "location", "rating": 10 },
+        { "category": "value", "rating": 10 }
+      ],
+      "submittedAt": "2022-06-30 19:25:00",
+      "guestName": "Olivia Martinez",
+      "listingName": "3C N2 B - 45 Hackney Road",
+      "channel": "airbnb"
+    },
+    {
+      "id": 11004,
+      "type": "guest",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great apartment, would stay again. Minor issue with hot water but resolved quickly.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "maintenance", "rating": 7 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2022-10-18 13:40:00",
+      "guestName": "Benjamin Clark",
+      "listingName": "3C N2 B - 45 Hackney Road",
+      "channel": "direct"
+    },
+    {
+      "id": 11005,
+      "type": "guest",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Apartment was not as clean as expected. Location was good though.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 4 },
+        { "category": "location", "rating": 8 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2023-02-28 10:55:00",
+      "guestName": "Sarah Williams",
+      "listingName": "3C N2 B - 45 Hackney Road",
+      "channel": "booking.com"
+    },
+    {
+      "id": 12001,
+      "type": "guest",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Beautiful loft with character. Loved the exposed brick walls!",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "location", "rating": 8 },
+        { "category": "amenities", "rating": 9 },
+        { "category": "design", "rating": 10 }
+      ],
+      "submittedAt": "2022-04-22 15:30:00",
+      "guestName": "Michael Brown",
+      "listingName": "Loft 5D - Brixton",
+      "channel": "airbnb"
+    },
+    {
+      "id": 12002,
+      "type": "guest",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Nice loft but heating wasn't working properly during our stay.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "amenities", "rating": 6 },
+        { "category": "maintenance", "rating": 5 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2022-07-10 12:05:00",
+      "guestName": "Jennifer Lee",
+      "listingName": "Loft 5D - Brixton",
+      "channel": "booking.com"
+    },
+    {
+      "id": 12003,
+      "type": "guest",
+      "status": "published",
+      "rating": 10,
+      "publicReview": "Best Airbnb experience ever! The host went above and beyond.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "location", "rating": 9 },
+        { "category": "value", "rating": 10 }
+      ],
+      "submittedAt": "2022-09-05 17:50:00",
+      "guestName": "Carlos Garcia",
+      "listingName": "Loft 5D - Brixton",
+      "channel": "airbnb"
+    },
+    {
+      "id": 12004,
+      "type": "guest",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great loft with lots of space. Perfect for a weekend in Brixton.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "location", "rating": 9 },
+        { "category": "space", "rating": 10 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2023-01-20 14:15:00",
+      "guestName": "Lisa Taylor",
+      "listingName": "Loft 5D - Brixton",
+      "channel": "direct"
+    },
+    {
+      "id": 13001,
+      "type": "guest",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Modern apartment with amazing views. Everything was brand new.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "amenities", "rating": 9 },
+        { "category": "location", "rating": 8 },
+        { "category": "design", "rating": 10 }
+      ],
+      "submittedAt": "2022-12-03 11:25:00",
+      "guestName": "Daniel White",
+      "listingName": "Penthouse A - Canary Wharf",
+      "channel": "airbnb"
+    },
+    {
+      "id": 13002,
+      "type": "guest",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Great view but the apartment felt impersonal. Missing some basic kitchen items.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "amenities", "rating": 6 },
+        { "category": "value", "rating": 7 },
+        { "category": "comfort", "rating": 6 }
+      ],
+      "submittedAt": "2023-03-10 09:40:00",
+      "guestName": "Amanda Scott",
+      "listingName": "Penthouse A - Canary Wharf",
+      "channel": "booking.com"
+    },
+    {
+      "id": 13003,
+      "type": "guest",
+      "status": "published",
+      "rating": 10,
+      "publicReview": "Absolutely stunning penthouse. Worth every penny!",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "amenities", "rating": 10 },
+        { "category": "location", "rating": 9 },
+        { "category": "view", "rating": 10 }
+      ],
+      "submittedAt": "2023-04-18 20:10:00",
+      "guestName": "Richard Kim",
+      "listingName": "Penthouse A - Canary Wharf",
+      "channel": "airbnb"
+    },
+    {
+      "id": 13004,
+      "type": "guest",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Excellent stay, very professional setup. Minor issue with elevator access.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 8 },
+        { "category": "amenities", "rating": 9 },
+        { "category": "check_in", "rating": 7 }
+      ],
+      "submittedAt": "2023-05-22 16:35:00",
+      "guestName": "Victoria Adams",
+      "listingName": "Penthouse A - Canary Wharf",
+      "channel": "direct"
+    },
+    {
+      "id": 13005,
+      "type": "guest",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Nice apartment but had issues with the air conditioning.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "amenities", "rating": 5 },
+        { "category": "value", "rating": 6 },
+        { "category": "maintenance", "rating": 4 }
+      ],
+      "submittedAt": "2023-06-05 13:20:00",
+      "guestName": "Kevin Patel",
+      "listingName": "Penthouse A - Canary Wharf",
+      "channel": "booking.com"
     }
   ]
 }
