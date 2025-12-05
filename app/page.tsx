@@ -38,9 +38,18 @@ export default function DashboardPage() {
   const { isApproved } = useApprovalState();
 
   useEffect(() => {
-    fetch("/api/reviews/hostaway")
-      .then((r) => r.json())
-      .then((data) => setReviews(data.result ?? []))
+    setLoading(true);
+    Promise.all([
+      fetch("/api/reviews/hostaway").then((r) => r.json()),
+      fetch("/api/reviews/stats").then((r) => r.json()),
+    ])
+      .then(([reviewsData, statsData]) => {
+        setReviews(reviewsData.result ?? []);
+
+        if (statsData.status === "success") {
+          console.log("Stats loaded:", statsData);
+        }
+      })
       .catch((e) => {
         console.error(e);
         setReviews([]);
@@ -48,13 +57,11 @@ export default function DashboardPage() {
       .finally(() => setLoading(false));
   }, []);
 
-  // Calculate approved reviews using our custom hook
   const approvedReviews = useMemo(
     () => reviews.filter((r) => isApproved(r.id)),
     [reviews, isApproved]
   );
 
-  // Filter reviews based on search, rating, and sort
   const filtered = useMemo(() => {
     let out = reviews.slice();
     if (query.trim()) {
@@ -79,7 +86,6 @@ export default function DashboardPage() {
     return out;
   }, [reviews, query, minRating, sort]);
 
-  // Group filtered reviews by listing
   const byListing = useMemo(() => {
     return filtered.reduce<Record<string, Review[]>>((acc, r) => {
       acc[r.listing] = acc[r.listing] || [];
@@ -88,7 +94,6 @@ export default function DashboardPage() {
     }, {});
   }, [filtered]);
 
-  // Calculate approved count for each listing
   const approvedCountByListing = useMemo(() => {
     const counts: Record<string, number> = {};
     reviews.forEach((review) => {
@@ -105,7 +110,6 @@ export default function DashboardPage() {
       ? reviews.reduce((sum, r) => sum + (r.rating || 0), 0) / reviews.length
       : 0;
 
-  // Calculate total approved reviews count
   const totalApprovedReviews = approvedReviews.length;
   const totalPendingReviews = totalReviews - totalApprovedReviews;
 
