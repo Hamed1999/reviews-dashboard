@@ -16,6 +16,7 @@ import {
   FiExternalLink,
 } from "react-icons/fi";
 import { useApprovalState } from "@/lib/useApprovalState";
+import TrendAnalysis from "./components/TrendAnalysis";
 
 type Review = {
   id: number;
@@ -25,6 +26,7 @@ type Review = {
   publicReview?: string;
   status: string;
   guestName?: string;
+  categories: Record<string, number>;
 };
 
 export default function DashboardPage() {
@@ -265,7 +267,10 @@ export default function DashboardPage() {
           </div>
         </div>
       </section>
-
+      {/* Trend Analysis */}
+      <section className="mb-8">
+        <TrendAnalysis reviews={reviews} />
+      </section>
       {/* Properties Grid */}
       <section>
         <div className="flex items-center justify-between mb-6">
