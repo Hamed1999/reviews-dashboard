@@ -12,6 +12,8 @@ import {
   FiCheckCircle,
   FiClock,
   FiMessageSquare,
+  FiEye,
+  FiExternalLink,
 } from "react-icons/fi";
 import { useApprovalState } from "@/lib/useApprovalState";
 
@@ -296,9 +298,11 @@ export default function DashboardPage() {
             {Object.entries(byListing).map(([listing, items]) => {
               const avg =
                 items.reduce((a, b) => a + (b.rating ?? 0), 0) / items.length;
-              
+
               // Calculate approved reviews for this specific listing
-              const approvedCount = items.filter(item => isApproved(item.id)).length;
+              const approvedCount = items.filter((item) =>
+                isApproved(item.id)
+              ).length;
 
               return (
                 <div
@@ -383,13 +387,26 @@ export default function DashboardPage() {
                     ))}
                   </div>
 
-                  <Link
-                    href={`/property/${encodeURIComponent(listing)}`}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3 px-4 rounded-xl font-medium transition-all duration-200 group-hover:shadow-lg"
-                  >
-                    Manage Reviews
-                    <FiChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                  </Link>
+                  <div className="flex flex-col gap-2 mt-4">
+                    <Link
+                      href={`/property/${encodeURIComponent(listing)}`}
+                      className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3 px-4 rounded-xl font-medium transition-all duration-200 group-hover:shadow-lg"
+                    >
+                      <FiCheckCircle className="w-4 h-4" />
+                      Manage Reviews
+                      <FiChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                    </Link>
+
+                    <Link
+                      href={`/public/listing/${encodeURIComponent(listing)}`}
+                      className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white py-3 px-4 rounded-xl font-medium transition-all duration-200"
+                      target="_blank" // Opens in new tab so managers don't lose their work
+                    >
+                      <FiEye className="w-4 h-4" />
+                      View Public Page
+                      <FiExternalLink className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
               );
             })}
