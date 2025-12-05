@@ -1,19 +1,18 @@
 # FlexLiving Reviews Dashboard
 
-A modern, intuitive dashboard for property managers to monitor, manage, and showcase guest reviews across multiple properties.
+A modern, intuitive dashboard for property managers to monitor, manage, and showcase guest reviews across multiple properties, built for the FlexLiving developer assessment.
 
 ## 🚀 Features
 
 ### 📊 Manager Dashboard
-
 - **Property Overview**: Group reviews by property with key metrics
 - **Advanced Filtering**: Search by review content, guest name, or minimum rating
 - **Sorting Options**: Sort by newest or highest-rated reviews
 - **Real-time Stats**: Track total reviews, average ratings, and approval status
 - **Quick Actions**: One-click navigation to property management pages
+- **Trend Analysis**: Spot patterns and recurring issues with visual charts
 
 ### 🏠 Property Management
-
 - **Detailed Review View**: See all reviews for a specific property
 - **Approval System**: Select which reviews appear on public website
 - **Live Preview**: See how approved reviews will display to visitors
@@ -21,243 +20,280 @@ A modern, intuitive dashboard for property managers to monitor, manage, and show
 - **Category Analysis**: View performance across cleanliness, communication, value, etc.
 
 ### 🌐 Public Display
-
 - **Professional Layout**: Clean, modern design matching FlexLiving brand
 - **Category Ratings**: Visual breakdown of performance metrics
 - **Verified Reviews**: Only manager-approved reviews displayed
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile
 
+### 🔌 API Integration
+- **Hostaway Integration**: Normalized API response with intelligent filtering
+- **Google Reviews Exploration**: Complete analysis of integration feasibility
+- **RESTful Design**: Clean, predictable API endpoints
+
 ## 🛠️ Tech Stack
 
-- **Frontend**: Next.js 14 (App Router), TypeScript, Tailwind CSS
-- **Icons**: React Icons (Feather icons set)
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript 5.x
+- **Styling**: Tailwind CSS 3.3
+- **Icons**: React Icons 4.11 (Feather icons set)
+- **Build Tool**: Turbopack (development)
 - **State Management**: React Hooks with localStorage synchronization
 - **Styling**: Custom gradients, shadows, and animations matching FlexLiving design
 
 ## 📁 Project Structure
 
+```
 my-reviews-dashboard/
 ├── app/
-│ ├── page.tsx # Main dashboard
-│ ├── property/[slug]/page.tsx # Property management page
-│ ├── public/listing/[slug]/page.tsx # Public property page
-│ └── api/
-│ ├── reviews/hostaway/route.ts # Hostaway API integration
-│ └── reviews/google/route.ts # Google Reviews exploration
+│   ├── layout.tsx                  # Root layout with metadata
+│   ├── page.tsx                    # Main dashboard
+│   ├── property/
+│   │   └── [slug]/page.tsx         # Property management page
+│   ├── public/
+│   │   └── listing/
+│   │       └── [slug]/page.tsx     # Public property page
+│   └── api/
+│       └── reviews/
+│           ├── hostaway/route.ts    # Hostaway API integration
+│           └── google/route.ts      # Google Reviews exploration
+├── components/
+│   └── TrendAnalysis.tsx           # Trend analysis component
 ├── lib/
-│ ├── approval.ts # Basic approval functions
-│ └── useApprovalState.ts # React hook for approval state
+│   ├── approval.ts                 # Basic approval functions
+│   └── useApprovalState.ts         # React hook for approval state
 ├── data/
-│ └── hostaway.json # Mock review data
-└── public/ # Static assets
+│   └── hostaway.json               # Mock review data
+├── public/                         # Static assets
+├── README.md                       # This file
+├── DOCUMENTATION.md                # Detailed technical documentation
+└── SETUP.md                        # Setup and troubleshooting guide
+```
 
 ## 🏃‍♂️ Getting Started
 
 ### Prerequisites
 
-- Node.js 18.17 or later
-- npm or yarn package manager
+- **Node.js** 18.17 or later
+- **npm** or **yarn** package manager
+- Modern web browser (Chrome, Firefox, Safari, or Edge)
 
 ### Installation
 
-### 1. **Clone the repository**
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/flexliving-reviews-dashboard.git
+   cd flexliving-reviews-dashboard
+   ```
 
-```bash
-git clone [repository-url]
-cd my-reviews-dashboard
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-Install dependencies
+3. **Add mock data**
+   - Create a `data` folder in the project root if it doesn't exist
+   - Place your `hostaway.json` file in the `data/` directory
+   - Ensure it follows the structure shown in the assessment document
 
-bash
-npm install
+4. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-# or
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-yarn install
-Add mock data
+## 📡 API Routes
 
-Place your hostaway.json file in the data/ directory
+### `/api/reviews/hostaway`
+- **Method**: GET
+- **Purpose**: Fetch and normalize Hostaway review data
+- **Parameters**:
+  - `listing` (optional): Filter reviews by property name (case-insensitive)
+- **Response**: Normalized review data with calculated ratings
+- **Example**: `GET /api/reviews/hostaway?listing=2B%20N1%20A`
 
-Ensure it follows the structure shown in the assessment document
+### `/api/reviews/google`
+- **Method**: GET
+- **Purpose**: Exploration of Google Reviews integration
+- **Response**: Mock data with comprehensive integration documentation
+- **Example**: `GET /api/reviews/google`
 
-Run the development server
+## 🔐 Approval System
 
-bash
-npm run dev
+The dashboard uses a sophisticated client-side approval system:
 
-# or
+- **Storage**: Uses `localStorage` to persist approval decisions
+- **Sync**: Custom hook (`useApprovalState`) syncs approval status across components
+- **Events**: Custom events trigger re-renders when approvals change
+- **Cross-tab Support**: Changes in one browser tab reflect in others
 
-yarn dev
-Open your browser
-Navigate to http://localhost:3000
+**Note**: For production deployment, consider moving to a database-backed solution with user authentication for cross-device synchronization.
 
-### 🔧 API Routes
+## 🎨 Design Decisions
 
-/api/reviews/hostaway
-Method: GET
+### UI/UX
+- **Clean Interface**: Minimalist design with clear visual hierarchy
+- **Responsive Grid**: Flexible layout adapting to all screen sizes
+- **Visual Feedback**: Hover effects, transitions, and status indicators
+- **Accessibility**: Semantic HTML with proper contrast ratios and ARIA labels
+- **Consistent Branding**: Matches FlexLiving's professional aesthetic
 
-Purpose: Fetch and normalize Hostaway review data
+### Data Handling
+- **Normalization**: Transforms nested Hostaway data into flat, usable structure
+- **Client-side Filtering**: Fast filtering without server round-trips
+- **Memoization**: Optimized performance with React's `useMemo`
+- **Error Handling**: Graceful degradation when data is missing or malformed
 
-Parameters:
+### State Management
+- **Local Storage**: Simple persistence without backend requirements
+- **Event-driven Updates**: Components react to approval changes via custom events
+- **Optimistic Updates**: Immediate UI feedback for user actions
+- **Server-side Safe**: All functions check for `window` object before using browser APIs
 
-listing (optional): Filter reviews by property name
+## 📈 Google Reviews Integration
 
-Response: Normalized review data with calculated ratings
-
-/api/reviews/google
-Method: GET
-
-Purpose: Exploration of Google Reviews integration
-
-Response: Mock data with integration documentation
-
-### 🔐 Approval System
-
-The dashboard uses a client-side approval system:
-
-Storage: Uses localStorage to persist approval decisions
-
-Sync: Custom hook (useApprovalState) syncs approval status across components
-
-Events: Custom events trigger re-renders when approvals change
-
-Note: For production, consider moving to a database-backed solution for cross-device synchronization.
-
-### 🎨 Design Decisions
-
-UI/UX
-Clean Interface: Minimalist design with clear visual hierarchy
-
-Responsive Grid: Flexible layout adapting to screen size
-
-Visual Feedback: Hover effects, transitions, and status indicators
-
-Accessibility: Semantic HTML with proper contrast ratios
-
-Data Handling
-Normalization: Transforms nested Hostaway data into flat structure
-
-Client-side Filtering: Fast filtering without server round-trips
-
-Memoization: Optimized performance with React's useMemo
-
-State Management
-Local Storage: Simple persistence without backend requirements
-
-Event-driven Updates: Components react to approval changes
-
-Optimistic Updates: Immediate UI feedback for user actions
-
-### 📈 Google Reviews Integration
-
-Findings
+### Findings
 The Google Reviews API exploration revealed:
 
-Requirements:
+**Requirements:**
+1. Google Cloud account with Places API enabled
+2. API key with billing enabled (free tier available)
+3. Place ID for each property
+4. Rate limiting implementation (60 requests/minute)
 
-Google Cloud account with Places API enabled
+**Limitations:**
+- Read-only access to reviews
+- Cannot reply or interact via API
+- Limited historical data available
+- Requires Google Business Profile for each property
 
-API key with billing enabled
+**Alternatives Considered:**
+1. **Third-party aggregation services** (Birdeye, Podium) - Easier setup but paid
+2. **Embedded Google reviews widget** - Simple but less control over styling
+3. **Manual review import** - Time-consuming but free
 
-Place ID for each property
+**Recommended Approach:**
+Start with Hostaway integration, then implement Google Reviews via embedded widgets for simplicity. As the property portfolio grows, invest in full API integration with proper rate limiting and caching.
 
-Rate limiting implementation (60 requests/minute)
+## 🔄 Development Workflow
 
-Limitations:
+### Adding New Features
+1. Create component in appropriate directory
+2. Add TypeScript interfaces for data structures
+3. Implement with responsive Tailwind classes
+4. Test across device sizes (mobile, tablet, desktop)
+5. Update documentation as needed
 
-Read-only access to reviews
+### Data Updates
+1. Update `hostaway.json` with new review data
+2. API automatically normalizes new structure
+3. Dashboard reflects changes immediately
+4. No code changes required for new properties
 
-Cannot reply or interact via API
+### Styling Updates
+1. Modify Tailwind classes in components
+2. Use FlexLiving color palette (blues, grays, accents)
+3. Maintain consistent spacing and typography
+4. Test in both light and dark modes
 
-Limited historical data
+## 🧪 Testing
 
-Requires Google Business Profile
+### Manual Testing Checklist
+- [ ] **Dashboard loads** with property cards
+- [ ] **Filtering works** (search, rating, sort)
+- [ ] **Property page shows** only relevant reviews
+- [ ] **Approval toggles work** and sync across pages
+- [ ] **Public page shows** only approved reviews
+- [ ] **Responsive design works** on mobile/tablet
+- [ ] **Stats update correctly** when approvals change
+- [ ] **API endpoints return** expected data structure
+- [ ] **Error handling works** for missing data
+- [ ] **LocalStorage persists** between sessions
 
-Alternatives Considered:
+### Browser Compatibility
+- ✅ Chrome 90+
+- ✅ Firefox 88+
+- ✅ Safari 14+
+- ✅ Edge 90+
 
-Third-party aggregation services (Birdeye, Podium)
+## 🚀 Deployment
 
-Embedded Google reviews widget
+### Vercel (Recommended)
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-Manual review import process
+# Deploy
+vercel
+```
 
-Recommended Approach:
-Start with Hostaway integration, then add Google Reviews via embedded widgets for simplicity, moving to API integration as scale warrants.
+### Self-Hosting
+```bash
+# Build for production
+npm run build
 
-### 🔄 Development Workflow
+# Start production server
+npm start
+```
 
-Adding New Features
-Create component in appropriate directory
+### Environment Variables
+Create `.env.local`:
+```bash
+NEXT_PUBLIC_APP_URL=https://your-domain.com
+# Add for Google API integration:
+# GOOGLE_PLACES_API_KEY=your_key_here
+```
 
-Add TypeScript interfaces for data structures
+## 📝 Documentation
 
-Implement with responsive Tailwind classes
+Complete documentation is available in:
+- **`DOCUMENTATION.md`**: Detailed technical specifications, architecture decisions, and API documentation
+- **`SETUP.md`**: Comprehensive setup instructions and troubleshooting guide
 
-Test across device sizes
+Key documentation sections include:
+- System architecture and component diagrams
+- API response formats and error codes
+- State management flowcharts
+- Performance optimization strategies
+- Security considerations
+- Future enhancement roadmap
 
-Data Updates
-Update hostaway.json with new review data
+## 🤝 Contributing
 
-API automatically normalizes new structure
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Make changes** with descriptive commits
+4. **Test thoroughly** across different devices
+5. **Submit a pull request** with clear description of changes
 
-Dashboard reflects changes immediately
+### Code Style Guidelines
+- Use TypeScript for all new code
+- Follow existing naming conventions
+- Add comments for complex logic
+- Ensure responsive design principles
+- Test in multiple browsers
 
-Styling Updates
-Modify Tailwind classes in components
+## 📄 License
 
-Use FlexLiving color palette (blues, grays, accents)
+This project was developed as part of the FlexLiving Developer Assessment. All rights reserved by FlexLiving.
 
-Maintain consistent spacing and typography
+## 🙏 Acknowledgements
 
-### 🧪 Testing
+- **FlexLiving** for the assessment opportunity and design inspiration
+- **Hostaway** for the review data structure and API specification
+- **Next.js and Tailwind teams** for excellent development tools
+- **React Icons** for the beautiful icon set
+- **The open-source community** for invaluable resources and inspiration
 
-Manual Testing Checklist
-Dashboard loads with property cards
+## 📞 Support
 
-Filtering works (search, rating, sort)
-
-Property page shows only relevant reviews
-
-Approval toggles work and sync across pages
-
-Public page shows only approved reviews
-
-Responsive design works on mobile/tablet
-
-Stats update correctly when approvals change
-
-### 📝 Documentation
-
-See DOCUMENTATION.md for:
-
-Detailed API specifications
-
-Component architecture
-
-State management flow
-
-Future enhancement ideas
-
-### 🤝 Contributing
-
-Fork the repository
-
-Create a feature branch
-
-Make changes with descriptive commits
-
-Submit a pull request with clear description
-
-### 📄 License
-
-This project is for FlexLiving assessment purposes.
-
-### 🙏 Acknowledgements
-
-FlexLiving for the assessment opportunity
-
-Hostaway for the review data structure
-
-Next.js and Tailwind teams for excellent tools
-"# reviews-dashboard" 
+For questions or issues:
+1. Check the [documentation](DOCUMENTATION.md)
+2. Review [setup instructions](SETUP.md)
+3. Examine browser console for errors
+4. Contact the development team if issues persist
